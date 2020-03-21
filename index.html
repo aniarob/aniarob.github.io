@@ -26,7 +26,7 @@
         speechRecognitionList.addFromString(grammar, 1)
         recognition.grammars = speechRecognitionList
         recognition.continuous = false
-        recognition.lang = 'en'
+        recognition.lang = 'en-US'
         recognition.interimResults = false
         recognition.maxAlternatives = 1
         recognition.onresult = function (event) {
@@ -41,9 +41,9 @@
 
         recognition.onnomatch = function (event) {
             console.log('I didnt recognise that number.')
-                ;
         }
         recognition.onerror = function (event) {
+            console.log(event)
             console.log('Error occurred in recognition: ' + event.error)
         }
 
